@@ -13,12 +13,17 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'enricobacis/vim-airline-clock'
-Plugin 'zxqfl/tabnine-vim'
+Plugin 'sheerun/vim-polyglot' 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-Personal Config
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+"Personal Config
+syntax on
 set number
 set linebreak
 set textwidth=100
@@ -67,3 +72,6 @@ let g:airline_theme='simple'
 " YCM
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+
+set guifont=FiraCode\ Nerd\ Font:h12
+set mouse=a
