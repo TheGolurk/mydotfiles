@@ -13,7 +13,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'enricobacis/vim-airline-clock'
-Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot' 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -53,21 +53,20 @@ set nu
 set nohlsearch
 
 " Eneable Gruvbox and set colorscheme
-"autocmd vimenter * colorscheme gruvbox
-"set background=dark
+autocmd vimenter * colorscheme gruvbox
+set background=dark
 "set background=light
-"let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'soft'
 "let g:gruvbox_contrast_light = 'hard'
 
 "set t_Co=256   " This is may or may not needed.
 
 "set background=light
 "colorscheme PaperColor
-set termguicolors
-"let ayucolor="light"
-let ayucolor="mirage"
-"let ayucolor="dark"
-colorscheme ayu"
+"set termguicolors    
+"let ayucolor="light" 
+"let ayucolor="dark"  
+"colorscheme ayu"
 
 " Smart tab line from vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -77,6 +76,13 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 nmap <Space>- <Plug>AirlineSelectPrevTab
 nmap <Space>+ <Plug>AirlineSelectNextTab
 
+nnoremap <C-T> :tabnew<CR>:e .<CR>
+nnoremap <C-P> :tabprev<CR>
+nnoremap <C-N> :tabnext<CR>
+nnoremap <C-V> :vsplit .<CR>
+nnoremap <C-H> :split .<CR>
+nnoremap <C-Q> :q<CR>
+
 " Clock
 let g:airline#extensions#clock#format = '%b %d %X'
 let g:airline#extensions#clock#updatetime = 1000
@@ -84,9 +90,11 @@ let g:airline#extensions#clock#updatetime = 1000
 " Vim Airline theme
 let g:airline_theme='simple'
 
-" YCM
-nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 set mouse=a
 
@@ -118,3 +126,4 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
