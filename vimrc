@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+set nocompatible              " be improved, required
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -56,7 +56,7 @@ set nohlsearch
 autocmd vimenter * colorscheme gruvbox
 set background=dark
 "set background=light
-let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrast_dark = 'hard'
 "let g:gruvbox_contrast_light = 'hard'
 
 "set t_Co=256   " This is may or may not needed.
@@ -76,12 +76,21 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 nmap <Space>- <Plug>AirlineSelectPrevTab
 nmap <Space>+ <Plug>AirlineSelectNextTab
 
-nnoremap <C-T> :tabnew<CR>:e .<CR>
-nnoremap <C-P> :tabprev<CR>
-nnoremap <C-N> :tabnext<CR>
+" Switch buffers
+nmap bn :bnext <CR>
+nmap bp :bprevious <CR>
+
+" New tab
+nmap tn :tabnew <CR>
+" Split Vertically
 nnoremap <C-V> :vsplit .<CR>
+" Split
 nnoremap <C-H> :split .<CR>
-nnoremap <C-Q> :q<CR>
+
+" Exit
+nnoremap <C-D> :q<CR>
+" Exit and save
+nnoremap <C-X> :x<CR>
 
 " Clock
 let g:airline#extensions#clock#format = '%b %d %X'
