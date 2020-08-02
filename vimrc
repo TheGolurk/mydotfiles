@@ -92,23 +92,11 @@ nnoremap <C-D> :q<CR>
 " Exit and save
 nnoremap <C-X> :x<CR>
 
-" Netrw
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-let g:netrw_browse_split = 1
-let g:netrw_winsize = 25
-
-" Pro Look
+" Pro Look netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
-
 
 " Clock
 let g:airline#extensions#clock#format = '%b %d %X'
