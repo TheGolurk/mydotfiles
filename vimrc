@@ -87,6 +87,9 @@ nnoremap <C-V> :vsplit .<CR>
 " Split
 nnoremap <C-H> :split .<CR>
 
+" Open Netrw (vscode style)
+nnoremap <C-B> :Explore .<CR>
+
 " Exit
 nnoremap <C-D> :q<CR>
 " Exit and save
