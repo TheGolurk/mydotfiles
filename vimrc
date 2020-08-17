@@ -51,6 +51,9 @@ set undofile
 set smartcase
 set nu
 set nohlsearch
+set nocursorline
+set lazyredraw
+set synmaxcol
 
 " Eneable Gruvbox and set colorscheme
 autocmd vimenter * colorscheme gruvbox
