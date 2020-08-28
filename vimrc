@@ -85,13 +85,15 @@ nmap bp :bprevious <CR>
 
 " New tab
 nmap tn :tabnew <CR>
+" Open Terminal
+nmap tr :terminal <CR>
 " Split Vertically
 nnoremap <C-V> :vsplit .<CR>
 " Split
 nnoremap <C-H> :split .<CR>
 
 " Open Netrw (vscode style)
-nnoremap <C-B> :Explore .<CR>
+nnoremap <C-B> :Vexplore .<CR>
 
 " Exit
 nnoremap <C-D> :q<CR>
