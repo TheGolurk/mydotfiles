@@ -100,11 +100,19 @@ nnoremap <C-D> :q<CR>
 " Exit and save
 nnoremap <C-X> :x<CR>
 
+" Only window
+nmap on :only <CR>
+
 " Pro Look netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
+let g:netrw_browse_split = 4
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 " Clock
 let g:airline#extensions#clock#format = '%b %d %X'
@@ -149,4 +157,4 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
-
+set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
