@@ -109,10 +109,6 @@ let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let g:netrw_browse_split = 4
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
 
 " Clock
 let g:airline#extensions#clock#format = '%b %d %X'
