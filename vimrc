@@ -154,3 +154,9 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+
+" vim-airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
