@@ -5,9 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'fatih/vim-go'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
@@ -23,6 +20,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wadackel/vim-dogrun'
 Plug 'ayu-theme/ayu-vim'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -62,14 +60,9 @@ set background=dark
 let g:gruvbox_contrast_dark = 'hard'
 "let g:gruvbox_contrast_light = 'hard'
 
-"set t_Co=256   " This is may or may not needed.
+set t_Co=256
 
 "set background=light
-"colorscheme PaperColor
-"set termguicolors    
-"let ayucolor="light" 
-"let ayucolor="dark"  
-"colorscheme ayu"
 
 " Smart tab line from vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -109,6 +102,15 @@ let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let g:netrw_browse_split = 4
+
+" Identline
+set conceallevel=1
+let g:indentLine_conceallevel=1
+let g:indentLine_setColors = 0
+let g:indentLine_enabled = 1
+let g:indentLine_concealcursor = 0
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_faster = 1
 
 " Clock
 let g:airline#extensions#clock#format = '%b %d %X'
@@ -153,10 +155,4 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
-set list listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
-
-" vim-airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
 
