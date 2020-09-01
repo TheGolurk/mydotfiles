@@ -17,6 +17,7 @@ filetype plugin indent on    " required
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wadackel/vim-dogrun'
 Plug 'ayu-theme/ayu-vim'
@@ -117,7 +118,16 @@ let g:airline#extensions#clock#format = '%b %d %X'
 let g:airline#extensions#clock#updatetime = 1000
 
 " Vim Airline theme
-let g:airline_theme='simple'
+let g:airline_theme='fruit_punch'
+" let g:airline_theme='minimalist'
+" let g:airline_theme='violet'
+
+let g:airline_powerline_fonts = 1
+
+if exists("*fugitive#statusline")
+  set statusline+=%{fugitive#statusline()}
+endif
+
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -156,3 +166,14 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
+" vim-airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = '||'
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
