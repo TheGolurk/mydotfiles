@@ -22,6 +22,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wadackel/vim-dogrun'
 Plug 'ayu-theme/ayu-vim'
 Plug 'Yggdroot/indentLine'
+Plug 'dense-analysis/ale'
+Plug 'pineapplegiant/spaceduck'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -53,15 +56,26 @@ set nohlsearch
 set nocursorline
 set lazyredraw
 set synmaxcol
+set shortmess=at
 
 " Eneable Gruvbox and set colorscheme
-autocmd vimenter * colorscheme gruvbox
-set background=dark
+" autocmd vimenter * colorscheme gruvbox
+" set background=dark
 "set background=light
-let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_contrast_dark = 'hard'
 "let g:gruvbox_contrast_light = 'hard'
 
+if exists('+termguicolors')
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
+
+" colorscheme spaceduck
+
 set t_Co=256
+
+colorscheme nord
 
 "set background=light
 
@@ -93,6 +107,8 @@ nnoremap <C-B> :Vexplore .<CR>
 nnoremap <C-D> :q<CR>
 " Exit and save
 nnoremap <C-X> :x<CR>
+" Save
+nnoremap <C-s> :w<CR>
 
 " Only window
 nmap on :only <CR>
@@ -177,3 +193,8 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = '||'
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
+
+" Ale
+let b:ale_linter_aliases = ['javascript', 'vue']
+let b:ale_linters = ['eslint', 'vls']
+let g:ale_fix_on_save = 1
