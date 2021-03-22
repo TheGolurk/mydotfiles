@@ -25,6 +25,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
 Plug 'pineapplegiant/spaceduck'
 Plug 'arcticicestudio/nord-vim'
+Plug 'glepnir/oceanic-material'
 
 call plug#end()
 
@@ -60,10 +61,8 @@ set shortmess=at
 
 " Eneable Gruvbox and set colorscheme
 " autocmd vimenter * colorscheme gruvbox
-" set background=dark
-"set background=light
 " let g:gruvbox_contrast_dark = 'hard'
-"let g:gruvbox_contrast_light = 'hard'
+" let g:gruvbox_contrast_light = 'hard'
 
 if exists('+termguicolors')
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -75,7 +74,7 @@ endif
 
 set t_Co=256
 
-colorscheme nord
+colorscheme oceanic_material
 
 "set background=light
 
@@ -198,3 +197,5 @@ let g:airline_symbols.readonly = ''
 let b:ale_linter_aliases = ['javascript', 'vue']
 let b:ale_linters = ['eslint', 'vls']
 let g:ale_fix_on_save = 1
+
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')

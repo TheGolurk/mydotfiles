@@ -8,11 +8,6 @@ EMOJI=(🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼 🐻 ❄️ 🐨 🐯 🦁 🐮 �
 💦 ☔️ 🌊  🙂 🙃 😀 😃 😄 😁 😆 😅 😂 🤣 🥲  😛 😝 😜 🤪 🤓 😎 🥸  😡 🤬 🤯 🌇 🌆 🏙 🌃 🌌 🌉 🌁 ⛪️ 🕌 🕍 🛕 🚷 🚯 🚳 🚱 🔞 📵 🚭 🚫 💯
 🔴 🟠 🟡 🟢 🔵 🟣 ⚫️ ⚪️ 🟤🔈 🔇 🔉 🔊 🔔 🔕 📣 📢 )    
 
-function random_emoji() {
-	printf "%s \n" "$EMOJI[$RANDOM % $#EMOJI+1]"
-}
-
-
 local ret_status="%(?:%{$fg_bold[green]%}λ :%{$fg_bold[red]%}λ %s)"
 
 function get_pwd(){
@@ -31,9 +26,6 @@ function get_pwd(){
 }
 
 PROMPT='$EMOJI[$RANDOM % $#EMOJI+1] $ret_status %{$fg[white]%}$(get_pwd) $(git_prompt_info)%{$reset_color%}%{$reset_color%} '
-# RPROMPT='%c'
-# PROMPT=printf "%s %s %{$fg[white]%}$(get_pwd) $(git_prompt_info)%{$reset_color%}%{$reset_color%} " "$EMOJI[$RANDOM % $#EMOJI+1]" $ret_status
-RPROMPT='%c'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
