@@ -1,5 +1,7 @@
 #/bin/bash
 
+# TODO: Parameters to: configure vim only, install or stuff like that
+
 function move_files {
 	cp vimrc ~/.vimrc
 	cp golurk.zsh-theme ~/.oh-my-zsh/custom/themes/golurk.zsh-theme
