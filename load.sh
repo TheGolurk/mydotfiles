@@ -5,6 +5,7 @@
 function move_files {
 	cp vimrc ~/.vimrc
 	cp golurk.zsh-theme ~/.oh-my-zsh/custom/themes/golurk.zsh-theme
+	cp zshrc ~/.zshrc
 }
 
 function replace_files {
