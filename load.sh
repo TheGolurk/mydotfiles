@@ -1,6 +1,7 @@
 #/bin/bash
 
-# TODO: Parameters to: configure vim only, install or stuff like that
+# TODO: Parameters to: configure vim only, install or stuff like that. Validate (in case of install)
+# if files are already installed
 
 # Usage: ./load.sh [OPTION1] [OPTION...]
 # Options: [move, replace, vim, validate]
