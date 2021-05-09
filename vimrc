@@ -74,7 +74,8 @@ endif
 
 set t_Co=256
 
-colorscheme oceanic_material
+" colorscheme oceanic_material
+colorscheme dogrun 
 
 "set background=light
 
@@ -133,7 +134,7 @@ let g:airline#extensions#clock#format = '%b %d %X'
 let g:airline#extensions#clock#updatetime = 1000
 
 " Vim Airline theme
-let g:airline_theme='fruit_punch'
+let g:airline_theme='angr'
 " let g:airline_theme='minimalist'
 " let g:airline_theme='violet'
 
