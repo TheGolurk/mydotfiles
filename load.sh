@@ -39,15 +39,26 @@ function validate_installations {
 	if which node > /dev/null
 		then
 			echo "node is alredy installed..."
+
 		else
 			curl -sL install-node.now.sh/lts | bash
+	
 	fi
 
 	# Go
 	if which go > /dev/null
 		then
+			echo "golang alredy installed"
 
 		else
+			# 1.16
+			curl -sL https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
+			sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
+			export PATH=$PATH:/usr/local/go/bin
+	
+			# inside zsh or bash
+			# export PATH=$PATH:/usr/local/go/bin
+			# export GOBIN=$(go env GOPATH)/bin
 
 	fi
 
