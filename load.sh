@@ -34,6 +34,23 @@ function validate_installations {
 		# fedora
 		dnf install -y git
 	fi
+	
+	# Node
+	if which node > /dev/null
+		then
+			echo "node is alredy installed..."
+		else
+			curl -sL install-node.now.sh/lts | bash
+	fi
+
+	# Go
+	if which go > /dev/null
+		then
+
+		else
+
+	fi
+
 }
 
 move_files
