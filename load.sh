@@ -57,8 +57,9 @@ function validate_installations {
 			export PATH=$PATH:/usr/local/go/bin
 	
 			# inside zsh or bash
-			# export PATH=$PATH:/usr/local/go/bin
-			# export GOBIN=$(go env GOPATH)/bin
+			echo export PATH=$PATH:/usr/local/go/bin >> ~/.zshrc
+			echo export GOBIN=$(go env GOPATH)/bin >> ~/.zshrc
+			source ~/.zshrc
 
 	fi
 
