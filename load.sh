@@ -52,7 +52,7 @@ function validate_installations {
 
 		else
 			# 1.16
-			curl -sL https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
+			curl -O https://golang.org/dl/go1.16.4.linux-amd64.tar.gz
 			sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.4.linux-amd64.tar.gz
 			export PATH=$PATH:/usr/local/go/bin
 	
