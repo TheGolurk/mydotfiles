@@ -60,6 +60,7 @@ set synmaxcol
 set shortmess=at
 
 " Eneable Gruvbox and set colorscheme
+" colorscheme gruvbox
 " autocmd vimenter * colorscheme gruvbox
 " let g:gruvbox_contrast_dark = 'hard'
 " let g:gruvbox_contrast_light = 'hard'
@@ -70,12 +71,12 @@ if exists('+termguicolors')
     set termguicolors
 endif
 
-" colorscheme spaceduck
+colorscheme spaceduck
 
 set t_Co=256
 
 " colorscheme oceanic_material
-colorscheme dogrun 
+" colorscheme dogrun 
 
 "set background=light
 
